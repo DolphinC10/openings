@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Chess Openings</title>
+    <style>
+      p {
+        text-align: center;
+        font-size: 32px;
+      }
+      body {
+        background-color: white;
+      }
+      button {
+        background-color: #e0e0e0;
+        cursor: pointer;
+        width: 100%;
+        font-size: 42px;
+      }
+      div {
+        padding: 20% 0;
+        margin: auto;
+        width: 35%;
+        padding: 10;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+    <button onmouseover="this.style.backgroundColor = 'rgb(204, 204, 204)'" onmouseout="this.style.backgroundColor = 'rgb(224, 224, 224)'" onclick="chooseOpening()">Generate an Opening
+    </button>
+    </div>
+    <p id="txt">
+      
+    </p>
+  <script>
+    let pawn;
+    let txt = document.getElementById('txt');
+
+    let openings = [
+     ['Giuoco Piano', 'Jerome Gambit', 'Evans Gambit', 'Petrov Defense', 'Stafford Gambit', 'Cochrene Gambit', '2 Knights', '4 Knights', 'Halloween Gambit', 'Nakhmanson Gambit', '3 Knights (3... Bb4)', 'Vienna', 'Scotch', 'Kings Gambit', 'Sicilian Dragon', 'Advance French', 'Advance Caro Kann', 'Pirc Defense', 'Scandinavian', 'Modern', 'Nimzowitsch', 'Alekhine', 'Owens Defense'],
+     ['London System', 'Queens Gambit Accepted', 'Queens Gambit Declined', 'Blackmar-Diemer', 'Catalan', 'Kings Indian Defense', 'Benoni', 'Englund Gambit', 'Dutch Defense', 'Budapest Gambit']
+    ];
+
+    let chooseOpening = () => {
+     pawn = Math.floor(Math.random() * 2);
+     txt.innerHTML = openings[pawn][Math.floor(Math.random() * openings[pawn].length)];
+    };
+  </script>
+  </body>
+</html>
